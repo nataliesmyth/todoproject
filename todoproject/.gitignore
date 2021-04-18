@@ -1,2 +1,3 @@
 todoproject/settings.py
 todoenv
+todoproject/.env
