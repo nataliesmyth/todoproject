@@ -11,9 +11,13 @@ def index(request):
     if request.method == "POST":
         # Get the posted form
         # the form send us back to our view when we hit submit, so we handle it below
+        # Instantiate the form
         form = TaskForm(request.POST)
+        # if form isn't valid, template with validation errors is rendered
         if form.is_valid():
+            # if the form is valid, a new task will be stored in the database 
             form.save()
+            # Then we redirect to the index page (redirect() method is Django's shortcut to redirect any URL)
             return redirect("index")
     return render(request, "index.html", {"task_form": form})
 
