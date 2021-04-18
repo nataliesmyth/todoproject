@@ -9,10 +9,9 @@ Tasks -
 
     <form method="post">
     {% csrf_token %}
-        <!-- display all tasks -->
-        <!-- {{task_form}} -->
-        <!-- display a particular field -->
-        {{task_form.title}}
+
+        <!-- {{task_form}} to display all -->
+        {{task_form.title}} <!-- to display particular field-->
 
         <button type="submit">SUBMIT</button>
     </form>
