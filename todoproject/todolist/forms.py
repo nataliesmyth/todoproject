@@ -11,3 +11,7 @@ class TaskForm(forms.ModelForm):
         model = Taskfields= "__all__"
         # include particular  fields of model in form
         # fields=('title,completed')
+
+
+# To create a form from a model, you just need to indicate which model to use to build the form in the Meta class of the form.
+# Django will them introspect the model and build the form dynamically
