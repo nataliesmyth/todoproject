@@ -19,7 +19,7 @@ def index(request):
             # Then we redirect to the index page (redirect() method is Django's shortcut to redirect any URL)
             return redirect("index")
 
-    tasks= Task.objects.all()
+    tasks = Task.objects.all()
     return render(request, "index.html", {"task_form": form, "tasks": tasks})
 
 # Update Task view
