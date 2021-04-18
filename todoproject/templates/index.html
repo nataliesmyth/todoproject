@@ -10,11 +10,19 @@ Tasks -
     <form method="post">
     {% csrf_token %}
 
-        <!-- {{task_form}} to display all -->
+        {{task_form}} <!-- variable -->
         {{task_form.title}} <!-- to display particular field-->
 
         <button type="submit">SUBMIT</button>
     </form>
+
+    <!-- loop over each item in teh array, making the item available in a context variable -->
+    <ol>
+        {% for task in tasks %}
+            <li>{{task.title}}</li>
+        {% endfor %}
+    </ol>
+
 {% endblock content %}
 
 <!-- csrf_token -->
