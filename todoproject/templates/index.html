@@ -20,7 +20,15 @@ Tasks -
         <!-- First argument is a url pattern, additional arguments are optional and should be space-separated values that will be used as arguments in the URL. Here, we pass task.id to view -->
     <ol>
         {% for task in tasks %}
-            <li>{{task.title}} | <a href='{% url "update_task" task.id %}'>Update</a></li>
+            <li>
+                {% if task.completed == True %}
+                    <strike>{{task.title}}</strike> 
+                    {% else %}
+                        {{task.title}}
+                    {% endif %}
+
+                    | <a href='{% url "update_task" task.id %}'>Update</a>
+            </li>
         {% endfor %}
     </ol>
 
