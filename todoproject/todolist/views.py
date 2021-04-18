@@ -3,8 +3,6 @@ from .forms import TaskForm
 from .models import Task
 
 # Create your views here.
-
-
 def index(request):
     # return HttpResponse("Hello World!!")
     form = TaskForm()
@@ -39,6 +37,12 @@ def update_task(request, pk):
             return redirect("index")
 
     return render(request, "update_task.html", {"task_edit_form": form})
+
+# to delete a task we get a task via its id and delete the object using the delete() method
+def delete_task(request, pk):
+    task = Task.objects.get(id=pk)
+    task.delete()
+    return redirect("index")
 
 # We built a form instance with task_form = TaskForm() & pass our form in our template index.html with the context {"task_form":form}
 # In our template, we can access this variable with task_form key
