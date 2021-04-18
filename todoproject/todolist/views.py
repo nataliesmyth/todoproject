@@ -22,12 +22,9 @@ def index(request):
     tasks = Task.objects.all()
     return render(request, "index.html", {"task_form": form, "tasks": tasks})
 
-# Update Task view
-# this view takes the pk argument to retrieve a particular task within the given id/pk
+
 def update_task(request, pk):
     task = Task.objects.get(id=pk)
-
-    # We get a particular task in our form by passing task instance to our form to update it
     form = TaskForm(instance=task)
 
     if request.method == "POST":
@@ -39,10 +36,10 @@ def update_task(request, pk):
     return render(request, "update_task.html", {"task_edit_form": form})
 
 # to delete a task we get a task via its id and delete the object using the delete() method
-def delete_task(request, pk):
-    task = Task.objects.get(id=pk)
-    task.delete()
-    return redirect("index")
+# def delete_task(request, pk):
+#     task = Task.objects.get(id=pk)
+#     task.delete()
+#     return redirect("index")
 
 # We built a form instance with task_form = TaskForm() & pass our form in our template index.html with the context {"task_form":form}
 # In our template, we can access this variable with task_form key
