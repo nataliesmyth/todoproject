@@ -11,15 +11,16 @@ Tasks -
     {% csrf_token %}
 
         {{task_form}} <!-- variable -->
-        {{task_form.title}} <!-- to display particular field-->
 
         <button type="submit">SUBMIT</button>
     </form>
 
-    <!-- loop over each item in teh array, making the item available in a context variable -->
+    <!-- loop over each item in the array, making the item available in a context variable -->
+    <!-- Below, the url tag returns an absolute path reference (URL w/o domain name) matching a given view and optional parameters -->
+        <!-- First argument is a url pattern, additional arguments are optional and should be space-separated values that will be used as arguments in the URL. Here, we pass task.id to view -->
     <ol>
         {% for task in tasks %}
-            <li>{{task.title}}</li>
+            <li>{{task.title}} | <a href='{% url "update_task" task.id %}'>Update</a></li>
         {% endfor %}
     </ol>
 
