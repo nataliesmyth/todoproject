@@ -1,0 +1,6 @@
+venv
+todoproject/todoenv
+todoproject/.vscode
+todoproject/todolist/__pycache__
+todoproject/todoproject/settings.py
+todoproject/todoproject/__pycache__
