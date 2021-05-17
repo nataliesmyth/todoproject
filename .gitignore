@@ -4,3 +4,7 @@ todoproject/.vscode
 todoproject/todolist/__pycache__
 todoproject/todoproject/settings.py
 todoproject/todoproject/__pycache__
+todoproject/todoproject/static
+.env
+node_modules
+.vscode
