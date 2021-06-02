@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render, HttpResponse
 from .forms import TaskForm
 from .models import Task
+import requests
 
 # Create your views here.
 def index(request):
